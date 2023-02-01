@@ -3,16 +3,16 @@
 @section('content')
     {{-- nav --}}
     <div class="sticky top-0 z-40 bg-white">
-        <div class=" px-4 py-4 max-w-6xl mx-auto flex justify-between items-center">
-            <div class="flex space-x-6 items-center font-semibold">
+        <div class=" px-4 py-4 max-w-6xl mx-auto flex sm:flex-row flex-col justify-between items-center">
+            <div class="flex  space-x-6 items-center font-semibold">
                 <img src="{{ asset('img/logo.png') }}" alt="Mnukwar Papua" class="w-14 mr-4">
-                <a href="#">Home</a>
-                <a href="#" class="text-gray-500">About us</a>
-                <a href="#" class="text-gray-500">Programs</a>
-                <a href="#" class="text-gray-500">Galeri</a>
+                <a href="#" class="sm:text-base text-xs">Home</a>
+                <a href="#" class="text-gray-500 sm:text-base text-xs">About us</a>
+                <a href="#" class="text-gray-500 sm:text-base text-xs">Programs</a>
+                <a href="#" class="text-gray-500 sm:text-base text-xs">Galeri</a>
             </div>
 
-            <a class="px-4 py-3 rounded bg-mnukwar text-white">Contact Us</a>
+            <a class="px-4 py-3 rounded bg-mnukwar text-white sm:text-base text-xs">Contact Us</a>
         </div>
     </div>
 
@@ -29,15 +29,15 @@
     </div>
 
     {{-- terkini --}}
-    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 gap-4 mt-12">
-        <div class="flex flex-col space-y-6 col-span-1">
-            <h1 class="text-3xl">A Section Title</h1>
+    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-2 grid-cols-1 gap-4 mt-12">
+        <div class="flex flex-col space-y-6 col-span-1 sm:order1 order-2">
+            <h1 class="text-3xl x">A Section Title</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus laboriosam magni voluptas maiores architecto quas nobis enim veritatis est eaque exercitationem corrupti alias id modi, sint atque inventore vel illo?</p>
             <a class="px-4 text-center rounded py-2 text-white bg-mnukwar sm:w-32 w-full">
                 Read More
             </a>
         </div>
-        <div class="col-span-1">
+        <div class="col-span-1 sm:order2 order-1">
             <img src="{{ asset('img/hero.jpeg') }}" alt="title" class="h-72 w-full object-center object-cover">
         </div>
 
