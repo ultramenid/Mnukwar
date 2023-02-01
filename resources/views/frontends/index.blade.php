@@ -5,7 +5,7 @@
     <div class="sticky top-0 z-40 bg-white">
         <div class=" px-4 py-4 max-w-6xl mx-auto flex sm:flex-row flex-col justify-between items-center">
             <div class="flex  space-x-6 items-center font-semibold">
-                <img src="{{ asset('img/logo.png') }}" alt="Mnukwar Papua" class="w-14 mr-4">
+                <img src="{{ asset('img/logo.png') }}" alt="Mnukwar Papua" class="w-14 sm:mr-4 mr-0">
                 <a href="#" class="sm:text-base text-xs">Home</a>
                 <a href="#" class="text-gray-500 sm:text-base text-xs">About us</a>
                 <a href="#" class="text-gray-500 sm:text-base text-xs">Programs</a>
