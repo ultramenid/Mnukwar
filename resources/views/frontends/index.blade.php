@@ -1,50 +1,39 @@
 @extends('layouts.indexLayout')
 
 @section('content')
-    {{-- nav --}}
-    <div class="sticky top-0 z-40 bg-white">
-        <div class=" px-4 py-4 max-w-6xl mx-auto flex sm:flex-row flex-col justify-between items-center">
-            <div class="flex  space-x-6 items-center font-semibold">
-                <img src="{{ asset('img/logo.png') }}" alt="Mnukwar Papua" class="w-14 sm:mr-4 mr-0">
-                <a href="#" class="sm:text-base text-xs">Home</a>
-                <a href="#" class="text-gray-500 sm:text-base text-xs">About us</a>
-                <a href="#" class="text-gray-500 sm:text-base text-xs">Programs</a>
-                <a href="#" class="text-gray-500 sm:text-base text-xs">Galeri</a>
-            </div>
-
-            <a class="px-4 py-3 rounded bg-mnukwar text-white sm:text-base text-xs">Contact Us</a>
-        </div>
-    </div>
+    @include('partials.nav')
 
     {{-- hero --}}
+    @if($cover)
     <div class="h-106 relative ">
         <div class="absolute bg-black z-20 w-full h-full opacity-40">   </div>
         <div class=" z-30 text-white text-center">
             <div class="flex flex-col h-full w-full px-4 items-center justify-center z-30 absolute">
-                <h1 class="text-7xl font-bold">Mnukwar Papua</h1>
-                <p class="max-w-3xl mx-auto mt-6">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto quaerat eaque debitis eos magnam minima earum eveniet enim repudiandae doloribus dolor ullam, magni ex a doloremque facilis deserunt dicta saepe?</p>
+                <h1 class="text-7xl font-bold">{{$cover->title}}</h1>
+                <p class="max-w-3xl mx-auto mt-6">{{$cover->deskripsi}}</p>
             </div>
         </div>
-        <img src="{{ asset('img/hero.jpeg') }}" alt="" class="h-full w-full object-cover object-center relative">
+        <img src="{{ asset('storage/files/photos/'.$cover->img) }}" alt="" class="h-full w-full object-cover object-center relative">
     </div>
-
+    @endif
     {{-- terkini --}}
-    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-2 grid-cols-1 gap-4 mt-12">
-        <div class="flex flex-col space-y-6 col-span-1 sm:order1 order-2">
-            <h1 class="text-3xl x">A Section Title</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus laboriosam magni voluptas maiores architecto quas nobis enim veritatis est eaque exercitationem corrupti alias id modi, sint atque inventore vel illo?</p>
+    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-2 grid-cols-1 gap-4 mt-12 w-full">
+        <div class="col-span-1 sm:order-last order-first ">
+            <img src="{{ asset('img/hero.jpeg') }}" alt="title" class="h-72 w-full object-center object-cover">
+        </div>
+        <div class=" col-span-1 sm:order-first order-last ">
+            <h1 class="text-3xl mb-2">A Section Title</h1>
+            <p class="mb-6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus laboriosam magni voluptas maiores architecto quas nobis enim veritatis est eaque exercitationem corrupti alias id modi, sint atque inventore vel illo?</p>
             <a class="px-4 text-center rounded py-2 text-white bg-mnukwar sm:w-32 w-full">
                 Read More
             </a>
         </div>
-        <div class="col-span-1 sm:order2 order-1">
-            <img src="{{ asset('img/hero.jpeg') }}" alt="title" class="h-72 w-full object-center object-cover">
-        </div>
+
 
     </div>
 
     {{-- headline --}}
-    <div class="max-w-6xl mx-auto px-4 bg-gray-100 py-4 mt-12">
+    <div class="max-w-6xl mx-auto px-4 bg-gray-100 py-4 mt-12 mb-4">
         <div class="w-full text-center">
             <h2 class="text-mnukwar text-4xl font-semibold">A punchy Headline</h2>
             <p class="mt-6 max-w-3xl mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolor a numquam provident quae dolores dolorum harum! Reiciendis, similique suscipit? Dignissimos aliquid vero aperiam suscipit ullam sint quae deleniti magnam.</p>
@@ -60,7 +49,7 @@
                     <div class="card">
                         <div class="card-header ">
                             <img
-                                class="w-96 h-60 object-cover"
+                                class="w-96 h-52 object-cover"
                                 src="{{ asset('img/hero.jpeg') }}"
                                 alt="tailwind-card-image"
                             />
@@ -85,7 +74,7 @@
                     <div class="card">
                         <div class="card-header ">
                             <img
-                                class="w-96 h-60 object-cover"
+                                class="w-96 h-52 object-cover"
                                 src="{{ asset('img/hero.jpeg') }}"
                                 alt="tailwind-card-image"
                             />
@@ -110,7 +99,7 @@
                     <div class="card">
                         <div class="card-header ">
                             <img
-                                class="w-96 h-60 object-cover"
+                                class="w-96 h-52 object-cover"
                                 src="{{ asset('img/hero.jpeg') }}"
                                 alt="tailwind-card-image"
                             />
@@ -132,5 +121,8 @@
             </div>
         </div>
     </div>
+
+    {{-- footer --}}
+    <livewire:frontend-footer  />
 
 @endsection
